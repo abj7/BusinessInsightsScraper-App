@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<style>
+html, body {
+  margin: 0;
+  background-color: #77cc6d;
+  font-family: 'Raleway Dots', sans-serif;
+}
+
+section #services {
+  text-align: center;
+  transform: translatez(0);
+}
+section #services h2 {
+  margin: 80px 0px 20px;
+  color: #fff;
+  font-size: 4em;
+  text-transform: uppercase;
+  text-align: center;
+}
+section #services h3 {
+  margin: 0px 0px 40px;
+  color: #fff;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight:bold;
+}
+section #services h4 {
+  margin: 0px 0px 10px;
+  color: #fff;
+  font-size: 1.0em;
+  text-align: center;
+}
+
+section #services h5 {
+  margin: 10px 200px 10px;
+  color: #fff;
+  font-size: 2.1em;
+  text-align: left;
+  font-weight:bold;
+}
+
+section #services h6 {
+  margin: 0px 100px 2px;
+  color: #fff;
+  font-size: 1.0em;
+  text-align: left;
+}
+
+section #services h7 {
+  margin: 0px 100px 10px;
+  color: #fff;
+  font-size: 1.6em;
+  text-align: center;
+  font-weight:bold;
+}
+
+section #services li {
+  width: 120px;
+  height: 140px;
+  display: inline-block;
+  margin: 20px;
+  list-style: none;
+}
+section #services li div {
+  width: 120px;
+  height: 120px;
+  color: #74d4b3;
+  font-size: 3.4em;
+  text-align: center;
+  line-height: 120px;
+  background-color: #fff;
+  transition: all 0.5s ease;
+}
+section #services li a {
+  color: #77cc6d;
+}
+section #services li div:hover {
+  transform: rotate(360deg);
+  border-radius: 100px;
+}
+section #services li span {
+  width: 120px;
+  height: 20px;
+  display: block;
+  padding: 10px 0px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  text-align: center;
+}
+.credits a {
+  display: block;
+  text-align: center;
+  color: #74d4b3;
+  text-decoration: none;
+  font-size: 24px;
+  margin-top: 50px;
+  background: white;
+  padding: 20px;
+  max-width: 300px;
+}
+
+.button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 28px 10px;
+    font-size: 2px;
+    cursor: pointer;
+}
+</style>
+<head>
+  <title>Home</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway+Dots" rel="stylesheet" type="text/css"/>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+</head>
+<section>
+  <ul id="services">
+    <h2>{{ trans[0] }}</h2>
+    <h3>{{ trans[1] }}</h3>
+    <h3>{{ trans[2] }}</h3>
+    <ul>
+                {% for str in trans2 %}
+                  {% if loop.index in headers %}
+                    <h7>{{ str }}</h7>
+                  {% else %}
+                    <h6>{{ str }}</h6>
+                  {% endif %}
+                {% endfor %}
+    </ul>
+     <div>
+        <form action="{{ url_for('submit')}}" method="POST">
+		  <h4>Company Ticker Symbol:</h4>
+		  <textarea name="comment" rows="1" cols="10"></textarea>
+		  <br/>
+          <h3>{{ company }}</h3>
+	  	<button type="button1">Enter</button>
+
+	  	</form>
+      </div>
+    <li>
+      <div class="transcripts">
+        <form action="{{ url_for('transcripts')}}" method="POST">
+          <button type = "transcripts" class = "button" aria-hidden="true">
+            <img src = "https://www.mas.co.in/images/transcript-icon.png" style="width:70px;height:63px"> </button>
+        </form>
+      </div>
+      <span style="font-weight:bold">Recent Call Transcript</span>
+    </li>
+    <li>
+      <div class="prices">
+                <form action="{{ url_for('prices')}}" method="POST">
+          <button type = "prices" class = "button" aria-hidden="true">
+            <img src = "https://cdn3.iconfinder.com/data/icons/essentials-vol-1-1/512/Income-512.png" style="width:80px;height:70px"> </button>
+                </form>
+      </div>
+      <span style="font-weight:bold">Stock Prices and Trend</span>
+    </li>
+    <li>
+      <div class="news">
+                <form action="{{ url_for('news')}}" method="POST">
+
+          <button type = "news" class = "button" aria-hidden="true">
+            <img src = "https://cdn1.iconfinder.com/data/icons/ios-edge-line-7/25/Newspaper-Articles-512.png" style="width:80px;height:70px"> </button>
+                </form>
+      </div>
+      <span style="font-weight:bold">Recent News Articles</span>
+    </li>
+    <li>
+      <div class="numbers">
+                <form action="{{ url_for('numbers')}}" method="POST">
+
+          <button type = "numbers" class = "button" aria-hidden="true">
+            <img src = "https://cdn4.iconfinder.com/data/icons/money/512/13-512.png" style="width:80px;height:70px"> </button>
+                </form>
+      </div>
+      <span style="font-weight:bold">Important Financial Numbers</span>
+    </li>
+    <li>
+      <div class="numbers">
+                <form action="{{ url_for('media')}}" method="POST">
+
+          <button type = "media" class = "button" aria-hidden="true">
+            <img src = "https://cdn1.iconfinder.com/data/icons/seo-pack-1/512/seo-29-512.png" style="width:80px;height:70px"> </button>
+                </form>
+      </div>
+      <span style="font-weight:bold">Social Media Mentions</span>
+    </li>
+  </ul>
+</section>
+</html>
