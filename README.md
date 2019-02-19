@@ -1,5 +1,7 @@
 # BusinessInsightsScraper-App
 
+Video Demonstration: http://youtu.be/e_Y46VU1v8M?hd=1
+
 Website: http://abj3.pythonanywhere.com/  (This is simply the design. To be able to run the features in the program, please run the web application locally)
 
 To run the web application locally (NOTE: Steps 3 & 4 only needed to access the social media extraction feature):
